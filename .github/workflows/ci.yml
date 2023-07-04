@@ -1,0 +1,13 @@
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a markdown lint
+      - name: Run a markdown lint
+        run: 
+          npm install remark-preset-lint-consistent
+          npx remark . --use remark-preset-lint-consistent --frail
+
+
